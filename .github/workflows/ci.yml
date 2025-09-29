@@ -21,7 +21,18 @@ jobs:
           go-version: '1.23' # adjust to your Go version
 
       - name: Download Go modules
-        run: go mod download
+        run: |
+          go mod download
+          go mod verify
+
+      - name: Debug modules
+        run: |
+          echo "=== Go version ==="
+          go version
+          echo "=== Module list ==="
+          go list -m all
+          echo "=== Build test ==="
+          go build ./internal/interface/routes/
 
       - name: Run golangci-lint
         uses: golangci/golangci-lint-action@v6
@@ -44,7 +55,9 @@ jobs:
           go-version: '1.23'
 
       - name: Download Go modules
-        run: go mod download
+        run: |
+          go mod download
+          go mod verify
 
       - name: Run unit tests
         run: go test ./... -v -race -coverprofile=coverage.out -covermode=atomic
