@@ -24,7 +24,7 @@ jobs:
         uses: golangci/golangci-lint-action@v6
         with:
           version: latest
-          args: --config ./golangci.toml ./...
+          args: --config ./golangci/golangci.toml ./...
 
   test:
     name: Run Go Tests
