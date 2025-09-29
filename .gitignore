@@ -1,0 +1,6 @@
+tmp/
+.git
+*.env
+*.log
+.DS_Store
+go.sum
