@@ -31,7 +31,10 @@ func NewRouter() *chi.Mux {
 	// Liveness probe endpoint for Kubernetes
 	router.Get("/health", func(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusOK)
-		w.Write([]byte(`{"status":"alive"}`))
+		_, err := w.Write([]byte(`{"status":"alive"}`))
+		if err != nil {
+			http.Error(w, `{"status":"error"}`, http.StatusInternalServerError)
+		}
 	})
 	return router
 }

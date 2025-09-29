@@ -10,6 +10,7 @@ import (
 	"github.com/uptrace/bun"
 )
 
+// User represents a user entity in the system.
 type User struct {
 	bun.BaseModel `bun:"table:users,alias:u"`
 	ID            uuid.UUID `json:"id" bun:",nullzero"`
@@ -22,18 +23,20 @@ type User struct {
 
 var _ bun.BeforeAppendModelHook = (*User)(nil)
 
+// UserRepository defines the methods that any
 type UserRepository interface {
 	CreateUser(user *User) (uuid.UUID, *shared.DomainError)
 	GetUser() (*[]User, *shared.DomainError)
 }
 
+// UserService defines the methods that any
 type UserService interface {
 	CreateUser(req *dto.CreateUserRequest) (*dto.CreateUserResponse, *shared.DomainError)
 	GetUser() (*dto.GetUserResponse, *shared.DomainError)
 }
 
 // BeforeAppendModel sets timestamps before insert/update.
-func (u *User) BeforeAppendModel(ctx context.Context, query bun.Query) error {
+func (u *User) BeforeAppendModel(_ context.Context, query bun.Query) error {
 	now := time.Now().UTC()
 	switch query.(type) {
 	case *bun.InsertQuery:

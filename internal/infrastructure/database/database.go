@@ -12,10 +12,12 @@ import (
 	"github.com/uptrace/bun/extra/bundebug"
 )
 
+// Database wraps the Bun DB connection and provides database access methods.
 type Database struct {
 	DB *bun.DB
 }
 
+// NewDatabase initializes and returns a new Database instance.
 func NewDatabase() (*Database, error) {
 	// Get database configuration from environment variables with defaults
 	host := getEnv("POSTGRES_HOST", "db")

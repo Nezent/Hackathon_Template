@@ -30,7 +30,7 @@ func main() {
 			lc fx.Lifecycle,
 		) {
 			lc.Append(fx.Hook{
-				OnStart: func(ctx context.Context) error {
+				OnStart: func(_ context.Context) error {
 					// Register routes
 					routes.Register()
 					log.Printf("Server started on port %v", 8080)
@@ -41,7 +41,7 @@ func main() {
 					}()
 					return nil
 				},
-				OnStop: func(ctx context.Context) error {
+				OnStop: func(_ context.Context) error {
 					return nil
 				},
 			})

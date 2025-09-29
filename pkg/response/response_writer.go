@@ -17,20 +17,26 @@ type APIResponse struct {
 func WriteSuccess(w http.ResponseWriter, data any, statusCode int) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(statusCode)
-	json.NewEncoder(w).Encode(APIResponse{
+	err := json.NewEncoder(w).Encode(APIResponse{
 		Success:    true,
 		StatusCode: statusCode,
 		Data:       data,
 	})
+	if err != nil {
+		http.Error(w, `{"success":false,"status_code":500,"error":"Internal Server Error"}`, http.StatusInternalServerError)
+	}
 }
 
 // WriteError writes an error response.
 func WriteError(w http.ResponseWriter, errMsg string, statusCode int) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(statusCode)
-	json.NewEncoder(w).Encode(APIResponse{
+	err := json.NewEncoder(w).Encode(APIResponse{
 		Success:    false,
 		StatusCode: statusCode,
 		Error:      errMsg,
 	})
+	if err != nil {
+		http.Error(w, `{"success":false,"status_code":500,"error":"Internal Server Error"}`, http.StatusInternalServerError)
+	}
 }
