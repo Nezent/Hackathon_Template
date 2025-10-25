@@ -6,12 +6,12 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Nezent/mig-test/internal/application/service"
-	"github.com/Nezent/mig-test/internal/infrastructure/database"
-	"github.com/Nezent/mig-test/internal/infrastructure/repository"
-	"github.com/Nezent/mig-test/internal/interface/handler"
-	"github.com/Nezent/mig-test/internal/interface/routes"
-	"github.com/Nezent/mig-test/pkg/router"
+	"github.com/Nezent/Hackathon_Template/internal/application/service"
+	"github.com/Nezent/Hackathon_Template/internal/infrastructure/database"
+	"github.com/Nezent/Hackathon_Template/internal/infrastructure/repository"
+	"github.com/Nezent/Hackathon_Template/internal/interface/handler"
+	"github.com/Nezent/Hackathon_Template/internal/interface/routes"
+	"github.com/Nezent/Hackathon_Template/pkg/router"
 	"github.com/go-chi/chi/v5"
 	"go.uber.org/fx"
 )

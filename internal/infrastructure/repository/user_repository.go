@@ -4,9 +4,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/Nezent/mig-test/internal/domain/shared"
-	"github.com/Nezent/mig-test/internal/domain/user"
-	"github.com/Nezent/mig-test/internal/infrastructure/database"
+	"github.com/Nezent/Hackathon_Template/internal/domain/shared"
+	"github.com/Nezent/Hackathon_Template/internal/domain/user"
+	"github.com/Nezent/Hackathon_Template/internal/infrastructure/database"
 	"github.com/google/uuid"
 	"github.com/uptrace/bun"
 )

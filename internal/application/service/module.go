@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/Nezent/mig-test/internal/domain/user"
+	"github.com/Nezent/Hackathon_Template/internal/domain/user"
 	"go.uber.org/fx"
 )
 

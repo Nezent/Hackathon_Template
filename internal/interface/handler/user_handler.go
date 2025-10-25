@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/Nezent/mig-test/internal/application/dto"
-	"github.com/Nezent/mig-test/internal/domain/user"
-	"github.com/Nezent/mig-test/pkg/response"
+	"github.com/Nezent/Hackathon_Template/internal/application/dto"
+	"github.com/Nezent/Hackathon_Template/internal/domain/user"
+	"github.com/Nezent/Hackathon_Template/pkg/response"
 )
 
 type UserHandler struct {

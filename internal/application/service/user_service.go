@@ -1,9 +1,9 @@
 package service
 
 import (
-	"github.com/Nezent/mig-test/internal/application/dto"
-	"github.com/Nezent/mig-test/internal/domain/shared"
-	"github.com/Nezent/mig-test/internal/domain/user"
+	"github.com/Nezent/Hackathon_Template/internal/application/dto"
+	"github.com/Nezent/Hackathon_Template/internal/domain/shared"
+	"github.com/Nezent/Hackathon_Template/internal/domain/user"
 )
 
 type UserServiceImpl struct {

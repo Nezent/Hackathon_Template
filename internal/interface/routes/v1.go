@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"github.com/Nezent/mig-test/internal/interface/handler"
+	"github.com/Nezent/Hackathon_Template/internal/interface/handler"
 	"github.com/go-chi/chi/v5"
 	"go.uber.org/fx"
 )

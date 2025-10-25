@@ -1,4 +1,4 @@
-module github.com/Nezent/mig-test
+module github.com/Nezent/Hackathon_Template
 
 go 1.23.4
 
